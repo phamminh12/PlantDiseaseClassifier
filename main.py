@@ -1,12 +1,14 @@
 import kagglehub
 
-# Download latest version
-path = kagglehub.dataset_download("emmarex/plantdisease")
+# Download version 1
+DATASET_KAGGLEHUB_PATH = "emmarex/plantdisease/versions/1"
+path = kagglehub.dataset_download(DATASET_KAGGLEHUB_PATH)
 
 print("Path to PlantVillage dataset files:", path)
 
 # Step 1: Import all necessary libraries
 import os
+from pathlib import Path
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -25,7 +27,12 @@ from tqdm import tqdm
 import time
 
 # Step 2: Set up paths and parameters
-dataset_path = "/kaggle/input/plantdisease/PlantVillage"
+
+# For: kaggle notebook
+# dataset_path = "/kaggle/input/plantdisease/PlantVillage"
+# For: custom python environment
+dataset_path = Path.home() / Path(".cache/kagglehub/datasets") / DATASET_KAGGLEHUB_PATH / "PlantVillage"
+
 img_size = (128, 128)
 
 # Step 3: Enhanced feature extraction with detailed progress
