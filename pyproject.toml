@@ -1,0 +1,28 @@
+[project]
+name = "plant-disease-classifier"
+version = "0.1.0"
+description = "Python + Opencv image proccessor for plants disease classification."
+authors = [
+    {name = "duongnqb", email="dn200422@gmail.com"},
+    {name = "phamminh12"}
+]
+license = {text = "GPL"}
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "opencv-python (>=4.12.0.88,<5.0.0.0)",
+    "numpy (>=2,<2.3.0)",
+    "scikit-learn (>=1.7.2,<2.0.0)",
+    "joblib (>=1.5.2,<2.0.0)",
+    "matplotlib (>=3.10.7,<4.0.0)",
+    "scikit-image (>=0.25.2,<0.26.0)",
+    "tensorflow (>=2.20.0,<3.0.0)",
+    "pillow (>=12.0.0,<13.0.0)"
+]
+
+[tool.poetry]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
